@@ -20,7 +20,7 @@ const ProductCard = ({product}) => {
       <View style={{flex: 1, justifyContent: 'space-between'}}>
         <Text>{product.title}</Text>
         <Text style={{fontWeight: 'bold'}}>{product.price}</Text>
-        <Text>{product.inStock ? null : "Sold Out"}</Text>
+        <Text style={!product.inStock?{backgroundColor:"yellow"} : null}>{product.inStock ? null : "Sold Out"}</Text>
       </View>
     </View>
   );
@@ -39,4 +39,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height / 4,
     resizeMode: 'contain',
   },
+  // soldText: {
+  //   backgroundColor: "yellow"
+  // }
 });
